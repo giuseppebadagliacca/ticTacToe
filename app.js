@@ -1,14 +1,17 @@
 let turn = (Math.floor(Math.random() * 2)) + 1;
-
+let h2DOM = document.querySelector("#display");
+let h1DOM = document.querySelector("h1");
 const gameDOM = {
 
     DOM: document.getElementById("game"),
 
     displayTurn() {
-        turn % 2 === 0 ? gameDOM.DOM.innerText = "X's goes first" : gameDOM.DOM.innerText = "O's goes first"
+        turn % 2 === 0 ? h2Display("X's goes first") : h2Display("O's goes first"); 
     }
 
 };
+
+gameDOM.displayTurn();
 
 let oneDOM = document.querySelector(".grid-item-1");
 let twoDOM = document.querySelector(".grid-item-2");
@@ -45,9 +48,7 @@ function checkForWins() {
         (oneDOM.innerText === "O" && fiveDOM.innerText === "O" && nineDOM.innerText === "O") ||
         (threeDOM.innerText === "O" && fiveDOM.innerText === "O" && sevenDOM.innerText === "O")
     ) {
-        gameDOM.DOM.id = "winning-font"
-        gameDOM.DOM.innerText = "0's Won!"
-        setTimeout(reload, 5000);
+        finalDisplay("0's Win!")
     }
     if (
         (oneDOM.innerText === "X" && fourDOM.innerText === "X" && sevenDOM.innerText === "X") ||
@@ -59,13 +60,27 @@ function checkForWins() {
         (oneDOM.innerText === "X" && fiveDOM.innerText === "X" && nineDOM.innerText === "X") ||
         (threeDOM.innerText === "X" && fiveDOM.innerText === "X" && sevenDOM.innerText === "X")
     ) {
-        gameDOM.DOM.id = "winning-font"
-        gameDOM.DOM.innerText = "X's Won!"
-        setTimeout(reload, 5000);
+        finalDisplay("X's Win!")
     }
 
 }
 
 function reload() {
     location.reload();
+}
+
+function h2Display(msg){
+    h2DOM.innerText = msg;
+    setTimeout(clear, 3000);
+}
+
+function clear(){
+    h2DOM.innerText = "";
+}
+
+function finalDisplay(msg){
+    h1DOM.innerText = "";
+    gameDOM.DOM.id = "winning-font"
+    gameDOM.DOM.innerText = msg;
+    setTimeout(reload, 5000);
 }
