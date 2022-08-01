@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: #ccc;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin: 10px;
+    margin-bottom: 30px;
+}
+#game{
+    display: grid;
+    grid-template-columns: repeat(3,5fr);
+    grid-template-rows: repeat(3,5fr);
+    grid-gap: 3px;
+}
+
+.grid-item{
+    height: 70px;
+    width: 70px;
+    border: 2px solid black;
+    padding: 70px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item:hover{
+    background: rgba(41, 41, 51, 0.183);
+}
+
+#winning-font{
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
