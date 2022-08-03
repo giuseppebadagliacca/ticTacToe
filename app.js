@@ -62,11 +62,9 @@ function checkForWins() {
     ) {
         finalDisplay("X's Win!")
     }
-
-}
-
-function reload() {
-    location.reload();
+    if(oneDOM.innerText !== "" && twoDOM.innerText !== "" && threeDOM.innerText !== "" && fourDOM.innerText !== "" && fiveDOM.innerText !== "" && sixDOM.innerText !== "" &&sevenDOM.innerText !== "" && eightDOM.innerText !== "" && nineDOM.innerText !== "" ){
+        finalDisplay("Try Again!")
+    }
 }
 
 function h2Display(msg){
@@ -81,6 +79,10 @@ function clear(){
 function finalDisplay(msg){
     h1DOM.innerText = "";
     gameDOM.DOM.id = "winning-font"
-    gameDOM.DOM.innerText = msg;
-    setTimeout(reload, 5000);
+    gameDOM.DOM.innerHTML = `
+    <h1>${msg}</h1>
+    <button onclick="playAgain()">Play Again</button>
+    `;
 }
+
+function playAgain(){location.reload()}

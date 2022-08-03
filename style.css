@@ -37,6 +37,7 @@ body{
 #winning-font{
     font-size: 55px;
     display: flex;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
 }
@@ -44,6 +45,26 @@ body{
 #display{
     margin: 10px;
     color: rgba(0, 0, 0, 0.546);
+}
+
+button{
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: rgba(102, 101, 101, 0.594);
+    border-radius: 10px;
+}
+button:hover{
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: rgba(102, 101, 101, 0.305);
+    border-radius: 10px;
+}
+
+button:active{
+    color: navy;
+    background-color: rgba(102, 101, 101, 0.817)
 }
 
 @media only screen 
@@ -86,8 +107,9 @@ body{
     }
     
     #winning-font{
-        font-size: 55px;
+        font-size: 30px;
         display: flex;
+        flex-direction: column; 
         justify-content: center;
         align-items: center;
     }
@@ -95,5 +117,24 @@ body{
     #display{
         margin: 10px;
         color: rgba(0, 0, 0, 0.546);
+    }
+    button{
+        border: none;
+        padding: 10px 15px;
+        margin: 5px;
+        background-color: rgba(102, 101, 101, 0.594);
+        border-radius: 10px;
+    }
+    button:hover{
+        border: none;
+        padding: 10px 15px;
+        margin: 5px;
+        background-color: rgba(102, 101, 101, 0.305);
+        border-radius: 10px;
+    }
+    
+    button:active{
+        color: navy;
+        background-color: rgba(102, 101, 101, 0.817)
     }
 }
