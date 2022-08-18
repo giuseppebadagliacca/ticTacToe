@@ -67,6 +67,12 @@ button:active{
     background-color: rgba(102, 101, 101, 0.817)
 }
 
+footer{
+    height: 25%;
+    display: flex;
+    align-items: flex-end;
+}
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px){
