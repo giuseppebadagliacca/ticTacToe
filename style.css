@@ -11,6 +11,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    overflow: hidden;
 }
 
 #game{
@@ -55,13 +56,6 @@ button{
     padding: 10px 15px;
     margin: 5px;
     background-color: rgba(102, 101, 101, 0.594);
-    border-radius: 10px;
-}
-button:hover{
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    background-color: rgba(102, 101, 101, 0.305);
     border-radius: 10px;
 }
 
