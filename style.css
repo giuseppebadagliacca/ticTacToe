@@ -4,15 +4,17 @@
     background: #ccc;
     box-sizing: border-box;
 }
+
 body{
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 
 #game{
+    visibility: hidden;
     display: grid;
     grid-template-columns: repeat(3,5fr);
     grid-template-rows: repeat(3,5fr);
@@ -43,6 +45,7 @@ body{
 }
 
 #display{
+    font-size: 2rem;
     margin: 10px;
     color: rgba(0, 0, 0, 0.546);
 }

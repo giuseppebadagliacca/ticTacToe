@@ -1,12 +1,22 @@
 let turn = (Math.floor(Math.random() * 2)) + 1;
 let h2DOM = document.querySelector("#display");
 let h1DOM = document.querySelector("h1");
+
+const timeline = gsap.timeline();
+timeline
+.fromTo('h1', {xPercent: -200, opacity: 0}, {xPercent: 0,opacity: 1})
+.fromTo('#display', {xPercent: +200, opacity: 0}, {xPercent: 0,opacity: 1})
+.fromTo('#game', {yPercent: +200, opacity: 0}, {yPercent: 0,opacity: 1, duration: 4, visibility:"visible"})
+
+
+
+
 const gameDOM = {
 
     DOM: document.getElementById("game"),
 
     displayTurn() {
-        turn % 2 === 0 ? h2Display("X's goes first") : h2Display("O's goes first"); 
+        turn % 2 === 0 ? h2Display("X's go first") : h2Display("O's go first"); 
     }
 
 };
@@ -50,6 +60,7 @@ function checkForWins() {
     ) {
         finalDisplay("0's Win!")
     }
+    
     if (
         (oneDOM.innerText === "X" && fourDOM.innerText === "X" && sevenDOM.innerText === "X") ||
         (twoDOM.innerText === "X" && fiveDOM.innerText === "X" && eightDOM.innerText === "X") ||
@@ -62,6 +73,7 @@ function checkForWins() {
     ) {
         finalDisplay("X's Win!")
     }
+
     if(oneDOM.innerText !== "" && twoDOM.innerText !== "" && threeDOM.innerText !== "" && fourDOM.innerText !== "" && fiveDOM.innerText !== "" && sixDOM.innerText !== "" &&sevenDOM.innerText !== "" && eightDOM.innerText !== "" && nineDOM.innerText !== "" ){
         finalDisplay("Try Again!")
     }
@@ -73,7 +85,8 @@ function h2Display(msg){
 }
 
 function clear(){
-    h2DOM.innerText = "";
+    gsap.to('#display', {scale: 0, duration: 4,})
+    
 }
 
 function finalDisplay(msg){
@@ -81,8 +94,11 @@ function finalDisplay(msg){
     gameDOM.DOM.id = "winning-font"
     gameDOM.DOM.innerHTML = `
     <h1>${msg}</h1>
-    <button onclick="playAgain()">Play Again</button>
+    <button onclick="playAgain()" style='margin-top: 100px'>Play Again</button>
     `;
+    gsap.fromTo('h1',{scale: 0, yPercent: -200, rotation:90}, {rotation: 0,yPercent: 0,scale: 1.5, duration: 1.75, ease: 'back', onComplete: ()=>{
+        gsap.fromTo('button',{rotation: -90},{rotation:0, duration:1, scale: 3, backgroundColor: "lightgreen"});
+    }}); 
 }
 
 function playAgain(){location.reload()}
