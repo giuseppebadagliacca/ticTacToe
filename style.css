@@ -54,14 +54,13 @@ body{
 button{
     border: none;
     padding: 10px 15px;
-    margin: 5px;
-    background-color: rgba(102, 101, 101, 0.594);
+    margin-top: 55px;
+    background-color: lightgreen;
     border-radius: 10px;
 }
 
-button:active{
-    color: navy;
-    background-color: rgba(102, 101, 101, 0.817)
+button:hover{
+background-color: rgba(144, 238, 144, 0.724);
 }
 
 footer{
@@ -120,24 +119,5 @@ footer{
     #display{
         margin: 10px;
         color: rgba(0, 0, 0, 0.546);
-    }
-    button{
-        border: none;
-        padding: 10px 15px;
-        margin: 5px;
-        background-color: rgba(102, 101, 101, 0.594);
-        border-radius: 10px;
-    }
-    button:hover{
-        border: none;
-        padding: 10px 15px;
-        margin: 5px;
-        background-color: rgba(102, 101, 101, 0.305);
-        border-radius: 10px;
-    }
-    
-    button:active{
-        color: navy;
-        background-color: rgba(102, 101, 101, 0.817)
     }
 }

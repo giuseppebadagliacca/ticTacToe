@@ -94,11 +94,34 @@ function finalDisplay(msg){
     gameDOM.DOM.id = "winning-font"
     gameDOM.DOM.innerHTML = `
     <h1>${msg}</h1>
-    <button onclick="playAgain()" style='margin-top: 100px'>Play Again</button>
+    <button onclick="playAgain()">Play Again</button>
     `;
-    gsap.fromTo('h1',{scale: 0, yPercent: -200, rotation:90}, {rotation: 0,yPercent: 0,scale: 1.5, duration: 1.75, ease: 'back'});
+    gsap.fromTo('h1',{
+        scale: 0, 
+        x: -1000, 
+        y: 1000, 
+        rotation:90}, 
+        {rotation: 0,
+            x: 0,
+            y:0,
+            scale: 1.75, 
+            duration: 1.75, 
+            ease: 'bounce'});
 
-    gsap.fromTo('button',{opacity: 0, x: 1000,rotation: -90},{opacity: 1, x: 0,rotation:0, duration:1, scale: 3, backgroundColor: "lightgreen", ease: 'bounce'});
+    gsap.fromTo('button',
+        {opacity: 0, 
+        x: 1000,
+        y: -1000,
+        rotation: -180},
+        
+        {opacity: 1, 
+            x: 0,
+            y: 0,
+            scale: 2,
+            rotation:0, 
+            duration:1.75,
+            ease: 'bounce',
+        });
 }
 
 function playAgain(){location.reload()}
